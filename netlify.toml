@@ -1,0 +1,6 @@
+# Netlify needs the official Next.js plugin. Vercel does not need this file.
+[build]
+  command = "npm run build"
+
+[[plugins]]
+  package = "@netlify/plugin-nextjs"

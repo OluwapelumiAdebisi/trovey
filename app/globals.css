@@ -1,0 +1,172 @@
+@import "tailwindcss";
+
+/*
+  Brand palette from the brief.
+  --color-slate (#94A3B8) is for text on navy/ink only (about 7.5:1).
+  On paper or white, secondary text uses --color-muted (#334155, about 9:1).
+  Small text and button labels use --color-teal-strong, not --color-teal.
+*/
+@theme {
+  --color-ink: #0a0f1e;
+  --color-navy: #0d1b3e;
+  --color-teal: #0d9488;
+  --color-teal-strong: #0f766e;
+  --color-mint: #14b8a6;
+  --color-paper: #f0f4f8;
+  --color-slate: #94a3b8;
+  --color-muted: #334155;
+  --color-body: #1e293b;
+  --font-sans: var(--font-jakarta), ui-sans-serif, system-ui, sans-serif;
+  --font-display: var(--font-outfit), ui-sans-serif, system-ui, sans-serif;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+    scroll-padding-top: 5.5rem;
+  }
+
+  body {
+    background: var(--color-paper);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    text-rendering: optimizeLegibility;
+  }
+
+  ::selection {
+    background: #0f766e;
+    color: #ffffff;
+  }
+
+  :focus-visible {
+    outline: 2px solid var(--color-teal-strong);
+    outline-offset: 3px;
+  }
+
+  [data-theme="dark"] :focus-visible {
+    outline-color: var(--color-mint);
+  }
+
+  [data-theme="light"] :focus-visible {
+    outline-color: var(--color-teal-strong);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+}
+
+/* Hero atmosphere. Motion is decorative and disabled when requested. */
+.hero-glow {
+  background:
+    radial-gradient(ellipse 55% 45% at 78% 42%, rgba(20, 184, 166, 0.2), transparent 62%),
+    radial-gradient(ellipse 40% 36% at 12% 88%, rgba(13, 148, 136, 0.16), transparent 70%),
+    linear-gradient(180deg, #0a0f1e 0%, #0d1b3e 58%, #0a0f1e 100%);
+}
+
+.hero-glow::after {
+  content: "";
+  position: absolute;
+  inset: -25%;
+  background: radial-gradient(circle at 30% 40%, rgba(20, 184, 166, 0.16), transparent 42%);
+  animation: drift 18s ease-in-out infinite;
+}
+
+.hero-grid {
+  background-image:
+    linear-gradient(rgba(148, 163, 184, 0.08) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(148, 163, 184, 0.08) 1px, transparent 1px);
+  background-size: 56px 56px;
+  mask-image: radial-gradient(ellipse at 72% 42%, #000 15%, transparent 72%);
+}
+
+@keyframes drift {
+  0%,
+  100% {
+    transform: translate3d(0, 0, 0);
+  }
+  50% {
+    transform: translate3d(-2%, 2%, 0);
+  }
+}
+
+.flow {
+  stroke-dasharray: 5 9;
+  animation: flow 24s linear infinite;
+}
+
+@keyframes flow {
+  to {
+    stroke-dashoffset: -420;
+  }
+}
+
+.hub-ring {
+  transform-box: fill-box;
+  transform-origin: center;
+  animation: hub 3.4s ease-in-out infinite;
+}
+
+@keyframes hub {
+  0%,
+  100% {
+    opacity: 0.45;
+  }
+  50% {
+    opacity: 1;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-glow::after,
+  .flow,
+  .hub-ring {
+    animation: none;
+  }
+}
+
+.lift {
+  transition:
+    transform 0.25s ease,
+    border-color 0.25s ease,
+    box-shadow 0.25s ease;
+}
+
+@media (hover: hover) and (prefers-reduced-motion: no-preference) {
+  .lift:hover {
+    transform: translateY(-4px);
+    border-color: rgba(13, 148, 136, 0.45);
+    box-shadow: 0 22px 44px -28px rgba(13, 27, 62, 0.55);
+  }
+}
+
+@media (hover: hover) and (prefers-reduced-motion: reduce) {
+  .lift:hover {
+    border-color: rgba(13, 148, 136, 0.45);
+  }
+}
+
+/* Scroll fade only where the browser supports view timelines.
+   Unsupported browsers keep the content fully visible. */
+@supports (animation-timeline: view()) {
+  @media (prefers-reduced-motion: no-preference) {
+    .reveal {
+      animation: fade-up linear both;
+      animation-timeline: view();
+      animation-range: entry 0% entry 32%;
+    }
+  }
+}
+
+@keyframes fade-up {
+  from {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}

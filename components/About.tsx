@@ -24,15 +24,12 @@ export function About() {
           <div
             className="flex aspect-square items-center justify-center rounded-3xl bg-navy text-paper"
             role="img"
-            aria-label="Placeholder for a headshot of Pelumi, Founder and CEO of Trovey"
+            aria-label="Monogram for Pelumi, Founder and CEO of Trovey"
           >
             <span className="font-display text-7xl font-semibold" aria-hidden="true">
               P
             </span>
           </div>
-          <figcaption className="mt-3 text-center text-xs font-medium uppercase tracking-[0.16em] text-muted">
-            Headshot placeholder
-          </figcaption>
         </figure>
 
         <div className="reveal">
@@ -44,13 +41,17 @@ export function About() {
           <p className="mt-6 font-display text-lg font-semibold text-ink">Pelumi · Founder &amp; CEO</p>
           <div className="mt-4 max-w-2xl space-y-4 text-base leading-relaxed text-body">
             <p>
-              Pelumi’s background is in data analytics and computer science. Trovey started after seeing how much value
-              businesses lose when they cannot get to the right data — and how often they are sold a dataset that was
-              never built around the way they work.
+              Trovey started after seeing how much value businesses lose when they cannot get to the right data, and how
+              often they are sold a dataset that was never built around the way they work.
             </p>
             <p>
-              The company is in early access. Pelumi is speaking with businesses and data providers before anything goes
-              on sale.
+              Pelumi is completing an MSc in Computer Science at Ulster University and previously worked as a Customer
+              Service Data Analyst at Samsung Electronics. Pelumi received the Best Computing Project Award from QA at
+              Ulster University (2026) and has taught data analysis as a volunteer instructor.
+            </p>
+            <p>
+              Trovey is in early access, and Pelumi is speaking directly with businesses and data providers before
+              anything goes on sale.
             </p>
           </div>
         </div>

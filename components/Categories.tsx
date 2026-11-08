@@ -5,22 +5,22 @@ const categories = [
   {
     title: "Consumer Behaviour",
     body: "How people browse, buy, and respond.",
-    examples: ["Retail", "Marketing"],
+    examples: ["Test which promotion works", "Spot churn early"],
   },
   {
     title: "Market and Industry",
     body: "Sector structure, competitors, and where demand is moving.",
-    examples: ["Consulting", "Strategy"],
+    examples: ["Size a new market", "Benchmark against rivals"],
   },
   {
     title: "Demographic",
     body: "Population, place, and how an audience is composed.",
-    examples: ["Logistics", "Retail"],
+    examples: ["Choose where to open", "Target a campaign by area"],
   },
   {
     title: "Custom and Niche",
     body: "A specific cut that a standard package does not stock.",
-    examples: ["Research", "Specialist operators"],
+    examples: ["Research a narrow segment", "Fill a gap in your own data"],
   },
 ];
 
@@ -33,7 +33,7 @@ export function Categories() {
             id="categories-title"
             eyebrow="Data categories"
             title="Start with the kind of data you actually use."
-            intro="These are the categories Trovey is built to carry. They show the kind of fit we mean. They are not a live catalogue."
+            intro="Trovey is built to carry four kinds of data, each tied to a decision a team actually has to make."
           />
         </div>
         <ul className="mt-12 grid gap-5 md:grid-cols-2">
@@ -44,7 +44,7 @@ export function Categories() {
               </p>
               <h3 className="mt-3 font-display text-2xl font-semibold tracking-tight text-ink">{item.title}</h3>
               <p className="mt-3 text-sm leading-relaxed text-muted">{item.body}</p>
-              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-teal-strong">Example industries</p>
+              <p className="mt-5 text-xs font-semibold uppercase tracking-[0.16em] text-teal-strong">Helps you</p>
               <ul className="mt-3 flex flex-wrap gap-2">
                 {item.examples.map((example) => (
                   <li key={example} className="rounded-full bg-paper px-3 py-1 text-sm text-navy">

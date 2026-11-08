@@ -37,8 +37,8 @@ export function validateEarlyAccess(input: EarlyAccessInput): FieldErrors {
 
   if (name.length < 2 || name.length > 120) errors.name = "Enter your name.";
   if (!EMAIL.test(email) || email.length > 254) errors.email = "Enter a work email address.";
-  if (company.length < 2 || company.length > 160) errors.company = "Enter your company.";
-  if (role.length < 2 || role.length > 120) errors.role = "Enter your role.";
+  if (company.length > 160) errors.company = "Please keep this to 160 characters.";
+  if (role.length > 120) errors.role = "Please keep this to 120 characters.";
   if (!isAudience(input.audience)) errors.audience = "Select the option that fits you.";
   if (needs.length > 800) errors.needs = "Please keep this to 800 characters.";
   if (input.consent !== true) errors.consent = "Consent is required before we can contact you.";

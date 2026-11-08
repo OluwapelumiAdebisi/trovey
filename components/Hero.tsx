@@ -23,8 +23,8 @@ export function Hero() {
             Data, <span className="text-mint">exactly</span> as you need it.
           </h1>
           <p className="mt-6 max-w-xl text-pretty text-base leading-relaxed text-[#CBD5E1] sm:text-lg">
-            Set the industry, data type, geography, and format you need, and Trovey surfaces matching datasets from
-            verified providers.
+            Tell us the decision you are making. Trovey finds the dataset that fits it from vetted providers, and
+            shows you the price before you commit.
           </p>
           <p className="mt-5 max-w-xl border-l-2 border-mint pl-4 text-base text-slate sm:text-lg">{POSITIONING}</p>
 
@@ -38,7 +38,7 @@ export function Hero() {
           </div>
 
           <p className="mt-5 max-w-xl text-sm leading-relaxed text-slate">
-            Pre-launch. The marketplace is not live, and nothing is for sale yet.{" "}
+            Early access is open. The marketplace itself is not live yet.{" "}
             <JoinLink join="investor" className="font-semibold text-mint underline decoration-mint/40 underline-offset-4">
               Investor? Request a conversation.
             </JoinLink>

@@ -15,7 +15,7 @@ const steps = [
   {
     n: "03",
     title: "Purchase only what you need.",
-    body: "When the marketplace opens, you pay for the dataset that fits the brief, with the price shown before you commit.",
+    body: "You pay for the dataset that fits the brief, with the price shown before you commit. No bundle to buy around.",
   },
 ];
 
@@ -28,7 +28,7 @@ export function HowItWorks() {
             id="how-title"
             eyebrow="How it works"
             title="A brief in. A matching dataset out."
-            intro="Three steps. This is the product we are preparing with early-access members. Purchasing is not open yet."
+            intro="Describe what you need once. Trovey does the searching, and you only pay for the part that fits."
           />
         </div>
 
@@ -48,9 +48,27 @@ export function HowItWorks() {
           ))}
         </ol>
 
-        <p className="reveal mt-8 max-w-3xl text-sm leading-relaxed text-muted">
-          Early access does not include purchasing. The steps above are how Trovey will work when the marketplace opens.
-        </p>
+        <div className="reveal mt-10 rounded-3xl bg-ink p-6 text-paper sm:p-8" data-theme="dark">
+          <p className="text-xs font-semibold uppercase tracking-[0.18em] text-mint">Example</p>
+          <p className="mt-3 max-w-2xl font-display text-xl font-semibold tracking-tight text-white sm:text-2xl">
+            A retail team is choosing which stores should run a spring promotion.
+          </p>
+          <dl className="mt-6 grid gap-6 text-sm leading-relaxed sm:grid-cols-2">
+            <div>
+              <dt className="font-semibold text-mint">The brief</dt>
+              <dd className="mt-2 text-[#CBD5E1]">Retail · Consumer behaviour · United Kingdom · CSV</dd>
+            </div>
+            <div>
+              <dt className="font-semibold text-mint">What Trovey surfaces</dt>
+              <dd className="mt-2 text-[#CBD5E1]">
+                Weekly basket trends, store catchment by area, and promotion response by campaign, closest fit first.
+              </dd>
+            </div>
+          </dl>
+          <p className="mt-6 text-xs leading-relaxed text-slate">
+            Illustrative example. The marketplace is not live yet, and early access does not include purchasing.
+          </p>
+        </div>
       </Container>
     </section>
   );

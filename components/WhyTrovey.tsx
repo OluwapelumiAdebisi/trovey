@@ -15,18 +15,6 @@ const rows = [
     diy: "You pay to collect, store, and query.",
   },
   {
-    criterion: "Verified providers",
-    trovey: "Providers are reviewed before their data is listed.",
-    brokers: "Checks differ from one broker to the next.",
-    diy: "Your team vets every source.",
-  },
-  {
-    criterion: "SMB-friendly onboarding",
-    trovey: "A short brief. No enterprise procurement process.",
-    brokers: "Often shaped around large contracts.",
-    diy: "Needs someone to build and look after the pipeline.",
-  },
-  {
     criterion: "Transparent pricing",
     trovey: "The price is visible before you commit.",
     brokers: "Many prices sit behind a sales quote.",
@@ -43,7 +31,7 @@ export function WhyTrovey() {
             id="why-title"
             eyebrow="Why Trovey"
             title="Designed for fit, not for bulk."
-            intro="How Trovey is meant to compare with the usual options. The marketplace is in early access, so the Trovey column is the product we are building — not a service you can use today."
+            intro="How Trovey is designed to compare with the usual options: a short brief, a dataset that fits it, and a price you can see."
           />
         </div>
 

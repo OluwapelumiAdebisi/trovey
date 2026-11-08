@@ -96,8 +96,8 @@ export function EarlyAccess() {
           id="early-access-title"
           tone="dark"
           eyebrow="Early access"
-          title="Ask for a seat. Nothing is live yet."
-          intro="Tell us who you are and what data you need or offer. We use this only to contact you about early access."
+          title="Join early access."
+          intro="Tell us who you are and what data you need or offer. Pelumi will write to you to arrange a short conversation. We use these details only for that."
         />
 
         <div className="rounded-3xl bg-white p-6 text-body shadow-[0_24px_60px_-36px_rgba(0,0,0,0.7)] sm:p-8" data-theme="light">
@@ -135,6 +135,7 @@ export function EarlyAccess() {
                   id={fieldId(baseId, "company")}
                   name="company"
                   label="Company"
+                  required={false}
                   value={company}
                   autoComplete="organization"
                   error={errors.company}
@@ -147,6 +148,7 @@ export function EarlyAccess() {
                   id={fieldId(baseId, "role")}
                   name="role"
                   label="Role"
+                  required={false}
                   value={role}
                   autoComplete="organization-title"
                   error={errors.role}
@@ -244,7 +246,7 @@ export function EarlyAccess() {
                 {status === "submitting" ? "Sending…" : "Request early access"}
               </button>
               <p className="mt-4 text-xs leading-relaxed text-muted">
-                No purchase, no account, and no live marketplace yet. This is a request to be contacted.
+                This is a request to be contacted. The marketplace is not live yet, so there is nothing to buy or sign up for.
               </p>
             </form>
           )}
@@ -278,8 +280,7 @@ function Success({ name, email, status }: { name: string; email: string; status:
       </h3>
       {status === "saved" ? (
         <p className="mt-3 text-sm leading-relaxed text-muted">
-          Thanks, {name}. We will write to {email} as early access opens. Nothing is live yet — this is not an account
-          and not a purchase.
+          Thanks, {name}. Pelumi will write to {email} to arrange a short conversation about what you need or offer.
         </p>
       ) : (
         <p className="mt-3 text-sm leading-relaxed text-muted">
@@ -304,10 +305,12 @@ function Field({
   error,
   type = "text",
   autoComplete,
+  required = true,
 }: {
   id: string;
   name: string;
   label: string;
+  required?: boolean;
   value: string;
   onChange: (value: string) => void;
   error?: string;
@@ -318,7 +321,7 @@ function Field({
   return (
     <div>
       <label htmlFor={id} className="block text-sm font-semibold text-navy">
-        {label} <RequiredMark />
+        {label} {required ? <RequiredMark /> : <span className="font-medium text-muted">(optional)</span>}
       </label>
       <input
         id={id}
